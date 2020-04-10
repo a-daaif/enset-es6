@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6</title>
+  </head>
+  <body>
+    <script>
+      // var tab = new Array()
+      const panier = [
+        { ref: "prod_1", prix: 34.89, qte: 4 },
+        { ref: "prod_2", prix: 44.89, qte: 7 },
+        { ref: "prod_3", prix: 3.9, qte: 9 },
+        { ref: "prod_4", prix: 77.69, qte: 14 },
+        { ref: "prod_5", prix: 66.5, qte: 40 },
+        { ref: "prod_6", prix: 77.89, qte: 3 },
+      ];
+
+      // A chercher sur Google : Youtube daaif Array.reduce
+      var st = panier.map((item) => item.prix * item.qte);
+      var total = st.reduce((acc, st) => (acc += st), 0);
+
+      // A immplémenter Array.prototype.myFind ?
+      //   Array.prototype.find
+      //   var neuf = panier.find((e) => e.qte > 9);
+
+      //   Array.prototype.filter
+
+      // A immplémenter Array.prototype.myFilter ?
+      // var filtred = panier.filter((e) => e.prix > 50);
+
+      // Array.prototype.forEach
+      ///////////////////////////////
+      //     Array.prototype.each = function (cb) {
+      //       for (var i = 0; i < this.length; i++) {
+      //         cb(this[i], i, this);
+      //       }
+      //     };
+      //   panier.each(f);
+
+      //   function f(item, i, tab) {
+      //     console.log("F called ---> ", item.prix * item.qte);
+      //   }
+
+      // Array.prototype.map
+      ///
+
+      //   Array.prototype.myMap = function (cb = funciotn(){}) {
+      //     const result = [];
+      //     for (var i = 0; i < this.length; i++) {
+      //       result.push(cb(this[i], i, this));
+      //     }
+      //     return result;
+      //   };
+
+      //   var prices = panier.myMap(function (e) {
+      //     return e.prix;
+      //   });
+      //   var indices = panier.myMap(function (e, i) {
+      //     return i * 100;
+      //   });
+      //   var st = panier.myMap(function (e) {
+      //     return e.prix * e.qte;
+      //   });
+
+      // Arrow function ES6
+
+      var st = panier.map((e) => e.prix * e.qte);
+    </script>
+  </body>
+</html>
